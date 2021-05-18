@@ -21,3 +21,4 @@ When CPU executes command from OS it is in supervisor mode, when it executes com
 This is to prevent user for security and reliability purposes as you can probably tell.
 So how can the CPU know whether it should be in supervisor mode or user mode?
 There is a bit in the CPU register ( 1 - system mode, 0 - user mode )
+These two modes act as a layer of protection... if the user tries to run privileged commands in user mode, this causes an interrupt to the processor which calls the operating system, which runs the interrupt service routine, which exits the program and throws it out of the memory stack.
